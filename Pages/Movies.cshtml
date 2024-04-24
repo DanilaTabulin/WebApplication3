@@ -1,0 +1,27 @@
+﻿@page
+@model WebApplication3.Pages.MoviesModel
+@{
+    ViewData["Title"] = "Movies page";
+}
+
+<h1>Страница Фильмы</h1>
+<a asp-page="Movie" class="btn btn-primary stretched-link">Создать</a>
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>Website</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Movies in Model.Movies)
+        {
+            <tr>
+                <td><a href="Movies?id=" +@Movies.Id>@Movies.Id</a></td>
+                <td>@Movies.Title</td>
+                <td>@Movies.Website</td>
+            </tr>
+        }
+    </tbody>
+</table>

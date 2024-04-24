@@ -1,0 +1,13 @@
+﻿@page
+@model WebApplication3.Pages.MovieModel
+@{
+    <form method="post">
+          <p>ID: @Model?.Movie?.Id</p>
+          <label for="Title">Название фильма</label>
+          <input asp-for="Movie.Title" type="text" id="Title" name="Title"><span asp-validation-for="Movie.Title"></span>
+          <h1></h1>
+          <label for="Website">Website</label>
+          <input asp-for="Movie.Website" type="text" id="Website" name="Website"><span asp-validation-for="Movie.Website"></span>
+          <button type="submit">Сохранить</button>
+    </form>
+}
